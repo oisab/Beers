@@ -8,18 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 class BeersListFragment: Fragment(R.layout.beers_list_fragment) {
     private val beersAdapter = BeersAdapter()
-    private lateinit var beersRecyclerView: RecyclerView
-
-    companion object{
-        fun newInstance(): BeersListFragment{
-            return BeersListFragment()
-        }
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        beersRecyclerView = view.findViewById(R.id.beersRecyclerView)
+        val beersRecyclerView: RecyclerView = view.findViewById(R.id.beersRecyclerView)
         beersRecyclerView.adapter = beersAdapter
         beersRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 

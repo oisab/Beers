@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import kotlin.math.log
 
 class LoginFragment: Fragment(R.layout.login_fragment) {
 
@@ -14,14 +13,8 @@ class LoginFragment: Fragment(R.layout.login_fragment) {
         loginButton.setOnClickListener{
             activity?.supportFragmentManager
                     ?.beginTransaction()
-                    ?.replace(R.id.mainContainerView, BeersListFragment.newInstance())
+                    ?.replace(R.id.mainContainerView, BeersListFragment())
                     ?.commitNow()
-        }
-    }
-
-    companion object{
-        fun newInstance(): LoginFragment {
-            return LoginFragment()
         }
     }
 }

@@ -1,4 +1,4 @@
 package com.oisab.beers
 
-class CellModel(val name: String, val icon: Int) {
+data class CellModel(val name: String, val icon: Int) {
 }

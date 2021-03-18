@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.mainContainerView, LoginFragment.newInstance())
+                .replace(R.id.mainContainerView, LoginFragment())
                 .commitNow()
     }
 }
