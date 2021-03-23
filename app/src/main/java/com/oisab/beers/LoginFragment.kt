@@ -11,19 +11,7 @@ class LoginFragment: Fragment(R.layout.login_fragment), ILoginFragment {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val loginButton: Button = view.findViewById(R.id.loginButton)
-        loginButton.setOnClickListener{
-            if(!validateLogin()) {
-                getError("Login validation Failed")
-                return@setOnClickListener }
-            if(!validatePassword()) {
-                getError("Password validation Failed")
-                return@setOnClickListener }
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.mainContainerView, BeersListFragment())
-                ?.commitNow()
-        }
+        clickLoginButton()
     }
 
     override fun validateLogin(): Boolean {
@@ -38,5 +26,21 @@ class LoginFragment: Fragment(R.layout.login_fragment), ILoginFragment {
 
     override fun getError(message: String) {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+    }
+
+    private fun clickLoginButton() {
+        val loginButton: Button? = view?.findViewById(R.id.loginButton)
+        loginButton?.setOnClickListener{
+            if(!validateLogin()) {
+                getError("Login validation Failed")
+                return@setOnClickListener }
+            if(!validatePassword()) {
+                getError("Password validation Failed")
+                return@setOnClickListener }
+            activity?.supportFragmentManager
+                    ?.beginTransaction()
+                    ?.replace(R.id.mainContainerView, BeersListFragment())
+                    ?.commitNow()
+        }
     }
 }
