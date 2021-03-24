@@ -1,8 +1,6 @@
 package com.oisab.beers
 
-import moxy.MvpView
-
-interface ILoginFragment: MvpView {
+interface ILoginFragment {
     fun validateLogin(): Boolean
     fun validatePassword(): Boolean
     fun getError(message: String)
