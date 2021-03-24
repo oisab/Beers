@@ -4,7 +4,7 @@ import moxy.InjectViewState
 import moxy.MvpPresenter
 
 @InjectViewState
-class BeersListPresenter: MvpPresenter<IBeersListFragment>() {
+class BeersListPresenter: MvpPresenter<IBeersListView>() {
 
     fun generateData(beersAdapter: BeersAdapter) {
         beersAdapter.setData(

@@ -10,7 +10,7 @@ class MainActivity : MvpAppCompatActivity() {
 
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.mainContainerView, LoginFragment())
+                .replace(R.id.mainContainerView, LoginView())
                 .commitNow()
     }
 }

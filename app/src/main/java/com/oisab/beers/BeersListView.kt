@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
-class BeersListFragment: MvpAppCompatFragment(), IBeersListFragment {
+class BeersListView: MvpAppCompatFragment(), IBeersListView {
 
     @InjectPresenter lateinit var beersListPresenter: BeersListPresenter
     private val beersAdapter = BeersAdapter()
