@@ -6,4 +6,7 @@
     <string name="registration">Registration</string>
     <string name="log_screen_text">If you don\'t go to the bar, the bar goes to you!</string>
     <string name="log_in">Log in</string>
+    <string name="last_name">Last name</string>
+    <string name="first_name">First name</string>
+    <string name="save_user_data">Save</string>
 </resources>
