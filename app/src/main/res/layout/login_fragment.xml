@@ -22,7 +22,6 @@
             app:layout_constraintBottom_toTopOf="@+id/loginTextField"
             android:src="@drawable/logo_screen"/>
 
-
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/loginTextField"
             android:layout_width="match_parent"
