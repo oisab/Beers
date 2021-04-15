@@ -9,4 +9,8 @@
     <string name="last_name">Last name</string>
     <string name="first_name">First name</string>
     <string name="save_user_data">Save</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="orders">Orders</string>
+    <string name="account">Account</string>
+    <string name="buy">Buy</string>
 </resources>

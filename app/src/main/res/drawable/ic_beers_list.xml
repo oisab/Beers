@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:viewportWidth="512"
     android:viewportHeight="512"
-    android:width="50dp"
-    android:height="50dp">
+    android:width="24dp"
+    android:height="24dp">
     <group
         android:scaleX="0.1"
         android:scaleY="-0.1"

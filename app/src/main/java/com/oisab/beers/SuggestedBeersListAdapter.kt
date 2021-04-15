@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 
-class BeersAdapter : RecyclerView.Adapter<BeersAdapter.BeersViewHolder>() {
+class SuggestedBeersListAdapter : RecyclerView.Adapter<SuggestedBeersListAdapter.BeersViewHolder>() {
     private val items: MutableList<CellModel> = ArrayList()
 
     fun setData(data: List<CellModel>) {

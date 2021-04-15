@@ -35,7 +35,7 @@ class LoginFragment : MvpAppCompatFragment(), LoginView {
     override fun signInAccount() {
         activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.mainContainerView, RecommendedBeersFragment())
+                ?.replace(R.id.mainContainerView, NavigationContainerFragment())
                 ?.commitNow()
     }
 
