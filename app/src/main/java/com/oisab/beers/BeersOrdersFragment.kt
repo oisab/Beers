@@ -4,11 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 import moxy.MvpAppCompatFragment
+import moxy.presenter.InjectPresenter
 
-class BeersOrdersFragment : MvpAppCompatFragment() {
+class BeersOrdersFragment : MvpAppCompatFragment(), BeersOrdersView {
+    @InjectPresenter
+    lateinit var beersOrdersPresenter: BeersOrdersPresenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -19,9 +24,15 @@ class BeersOrdersFragment : MvpAppCompatFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val buyButton: AppCompatButton = view.findViewById(R.id.buyButton)
+        val textOrdersCount = view.findViewById<TextView>(R.id.textOrdersCount)
 
         buyButton.setOnClickListener {
-            Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+            beersOrdersPresenter.dataSource()
+                    .subscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe {
+                        textOrdersCount.text = it.toString()
+                    }
         }
     }
 }

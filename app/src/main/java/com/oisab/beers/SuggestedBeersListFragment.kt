@@ -26,7 +26,7 @@ class SuggestedBeersListFragment : MvpAppCompatFragment(), SuggestedBeersListVie
         val beersRecyclerView: RecyclerView? = view.findViewById(R.id.beersRecyclerView)
         beersRecyclerView?.adapter = beersAdapter
         beersRecyclerView?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        suggestedBeersListPresenter.setBeersData()
+        suggestedBeersListPresenter.getBeersData()
     }
 
     override fun setBeersItems(items: ArrayList<CellModel>) {

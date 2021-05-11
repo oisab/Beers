@@ -13,4 +13,5 @@
     <string name="orders">Orders</string>
     <string name="account">Account</string>
     <string name="buy">Buy</string>
+    <string name="email">E-mail</string>
 </resources>

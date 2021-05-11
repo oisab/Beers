@@ -7,10 +7,11 @@ import moxy.MvpPresenter
 @InjectViewState
 class UserSettingsPresenter : MvpPresenter<UserSettingsView>() {
 
-    fun saveUserData(sharedPref: SharedPreferences, lastName: String, lastNameValue: String,
-                     firstName: String, firstNameValue: String) {
-        saveStringData(sharedPref, lastName, lastNameValue)
-        saveStringData(sharedPref, firstName, firstNameValue)
+    fun saveUserData(sharedPref: SharedPreferences, lastNameValue: String, firstNameValue: String, userPhoneNumber: String, userEmailValue: String) {
+        saveStringData(sharedPref, UserSettingsFragment.LAST_NAME, lastNameValue)
+        saveStringData(sharedPref, UserSettingsFragment.FIRST_NAME, firstNameValue)
+        saveStringData(sharedPref, UserSettingsFragment.PHONE_NUMBER, userPhoneNumber)
+        saveStringData(sharedPref, UserSettingsFragment.EMAIL, userEmailValue)
     }
 
     private fun saveStringData(sharedPref: SharedPreferences, key: String, value: String) {
