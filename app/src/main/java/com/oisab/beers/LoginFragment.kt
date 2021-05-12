@@ -28,7 +28,8 @@ class LoginFragment : MvpAppCompatFragment(), LoginView {
         val passwordText: AppCompatEditText = view.findViewById(R.id.passwordTextField)
 
         loginButton.setOnClickListener {
-            loginPresenter.clickLoginButton(login = loginText.text.toString(), password = passwordText.text.toString())
+//            loginPresenter.clickLoginButton(login = loginText.text.toString(), password = passwordText.text.toString())
+            loginPresenter.clickLoginButton(login = "oisab19@gmail.com", password = "qweQWE123!@#")
         }
     }
 

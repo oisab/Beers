@@ -27,6 +27,7 @@ class SuggestedBeersListFragment : MvpAppCompatFragment(), SuggestedBeersListVie
         beersRecyclerView?.adapter = beersAdapter
         beersRecyclerView?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         suggestedBeersListPresenter.getBeersData()
+        suggestedBeersListPresenter.fetchBeersList((activity?.application as BeersApp).beersApi)
     }
 
     override fun setBeersItems(items: ArrayList<CellModel>) {

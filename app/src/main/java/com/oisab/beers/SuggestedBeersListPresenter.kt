@@ -1,10 +1,14 @@
 package com.oisab.beers
 
+import android.util.Log
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.internal.util.ErrorMode
+import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import io.reactivex.rxjava3.schedulers.Schedulers
 import moxy.InjectViewState
 import moxy.MvpPresenter
+import okhttp3.internal.http2.ErrorCode
 
 @InjectViewState
 class SuggestedBeersListPresenter : MvpPresenter<SuggestedBeersListView>() {
@@ -23,5 +27,22 @@ class SuggestedBeersListPresenter : MvpPresenter<SuggestedBeersListView>() {
             add(CellModel("Saison Ale", R.drawable.ic_launcher_foreground))
         }
         viewState.setBeersItems(items)
+    }
+
+    fun fetchBeersList(beersApi: BeersApi) {
+        disposeBag.add(beersApi.getBeersList()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                       Log.e("TAG", "${it[10]}")
+            }, {
+                        Log.e("TAG", "Error - $it")
+            })
+        )
+    }
+
+    override fun onDestroy() {
+        disposeBag.clear()
+        super.onDestroy()
     }
 }
