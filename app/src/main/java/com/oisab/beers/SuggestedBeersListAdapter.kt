@@ -7,10 +7,10 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 
-class BeersAdapter: RecyclerView.Adapter<BeersAdapter.BeersViewHolder>() {
+class SuggestedBeersListAdapter : RecyclerView.Adapter<SuggestedBeersListAdapter.BeersViewHolder>() {
     private val items: MutableList<CellModel> = ArrayList()
 
-    fun setData(data: List<CellModel>){
+    fun setData(data: List<CellModel>) {
         this.items.clear()
         this.items.addAll(data)
         notifyDataSetChanged()
@@ -29,12 +29,12 @@ class BeersAdapter: RecyclerView.Adapter<BeersAdapter.BeersViewHolder>() {
         return items.size
     }
 
-    class BeersViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class BeersViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val textView: AppCompatTextView = itemView.findViewById(R.id.beerTitleView)
         private val iconView: AppCompatImageView = itemView.findViewById(R.id.beerIconView)
 
-        fun bind(model: CellModel){
-            if(model.icon > 0) {
+        fun bind(model: CellModel) {
+            if (model.icon > 0) {
                 iconView.setImageResource(model.icon)
             }
             textView.text = model.name
