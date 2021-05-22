@@ -12,25 +12,25 @@ class BeersApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         configureRetrofit()
     }
 
     private fun configureRetrofit() {
-        val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
         val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(loggingInterceptor)
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.punkapi.com/v2/")
+            .baseUrl(" https://api.punkapi.com/v2/ ")
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         beersApi = retrofit.create(BeersApi::class.java)
     }
+    
 }

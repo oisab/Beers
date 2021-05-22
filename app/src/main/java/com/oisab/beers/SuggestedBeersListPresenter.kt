@@ -34,9 +34,9 @@ class SuggestedBeersListPresenter : MvpPresenter<SuggestedBeersListView>() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                       Log.e("TAG", "${it[10]}")
+                Log.e("TAG", "${it[0]}")
             }, {
-                        Log.e("TAG", "Error - $it")
+                Log.e("TAG", "Error - $it")
             })
         )
     }
