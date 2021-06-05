@@ -22,7 +22,7 @@ class UserSettingsFragment : MvpAppCompatFragment(), UserSettingsView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val userSharedPref = activity!!.getSharedPreferences("USER_SETTINGS", Context.MODE_PRIVATE)
+        val userSharedPref = requireActivity().getSharedPreferences("USER_SETTINGS", Context.MODE_PRIVATE)
         val lastNameEditText: AppCompatEditText = view.findViewById(R.id.userLastName)
         val firstNameEditText: AppCompatEditText = view.findViewById(R.id.userFirstName)
         val userPhoneNumber: AppCompatEditText = view.findViewById(R.id.userPhoneNumber)
