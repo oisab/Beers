@@ -2,7 +2,7 @@ package com.oisab.beers
 
 import com.google.gson.annotations.SerializedName
 
-data class BeersListItem(
+data class BeersListResponse(
     val id: Int,
     val name: String,
     val tagline: String,
