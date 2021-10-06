@@ -2,6 +2,7 @@ package com.oisab.beers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.oisab.beers.screens.start.LoginFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
