@@ -1,4 +1,4 @@
-package com.oisab.beers
+package com.oisab.beers.screens.main.orders
 
 import io.reactivex.rxjava3.core.Observable
 import moxy.InjectViewState

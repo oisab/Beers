@@ -1,9 +1,13 @@
-package com.oisab.beers
+package com.oisab.beers.screens
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.oisab.beers.R
+import com.oisab.beers.screens.main.account.UserSettingsFragment
+import com.oisab.beers.screens.main.orders.BeersOrdersFragment
+import com.oisab.beers.screens.main.suggestions.SuggestedBeersListFragment
 import moxy.MvpAppCompatFragment
 
 class NavigationContainerFragment : Fragment(R.layout.navigation_container_fragment) {

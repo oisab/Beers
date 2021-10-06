@@ -1,4 +1,4 @@
-package com.oisab.beers
+package com.oisab.beers.screens.main.orders
 
 import moxy.MvpView
 import moxy.viewstate.strategy.SingleStateStrategy

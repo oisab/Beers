@@ -1,4 +1,4 @@
-package com.oisab.beers
+package com.oisab.beers.screens.start
 
 import moxy.InjectViewState
 import moxy.MvpPresenter

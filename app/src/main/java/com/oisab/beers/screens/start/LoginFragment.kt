@@ -1,4 +1,4 @@
-package com.oisab.beers
+package com.oisab.beers.screens.start
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
+import com.oisab.beers.screens.NavigationContainerFragment
+import com.oisab.beers.R
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 

@@ -1,8 +1,8 @@
-package com.oisab.beers
+package com.oisab.beers.data.remote
 
 import com.google.gson.annotations.SerializedName
 
-data class BeersListItem(
+data class BeersListResponse(
     val id: Int,
     val name: String,
     val tagline: String,

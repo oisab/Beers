@@ -1,4 +1,4 @@
-package com.oisab.beers
+package com.oisab.beers.screens.main.account
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
+import com.oisab.beers.R
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -22,7 +23,7 @@ class UserSettingsFragment : MvpAppCompatFragment(), UserSettingsView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val userSharedPref = activity!!.getSharedPreferences("USER_SETTINGS", Context.MODE_PRIVATE)
+        val userSharedPref = requireActivity().getSharedPreferences("USER_SETTINGS", Context.MODE_PRIVATE)
         val lastNameEditText: AppCompatEditText = view.findViewById(R.id.userLastName)
         val firstNameEditText: AppCompatEditText = view.findViewById(R.id.userFirstName)
         val userPhoneNumber: AppCompatEditText = view.findViewById(R.id.userPhoneNumber)

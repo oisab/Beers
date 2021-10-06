@@ -1,4 +1,4 @@
-package com.oisab.beers
+package com.oisab.beers.screens.main.account
 
 import android.content.SharedPreferences
 import moxy.InjectViewState
