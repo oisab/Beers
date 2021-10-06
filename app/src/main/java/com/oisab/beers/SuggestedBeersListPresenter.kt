@@ -9,7 +9,7 @@ import moxy.MvpPresenter
 import javax.inject.Inject
 
 @InjectViewState
-class SuggestedBeersListPresenter @Inject constructor(val beersApi: BeersApi): MvpPresenter<SuggestedBeersListView>() {
+class SuggestedBeersListPresenter @Inject constructor(private val suggestedBeersListRepository: SuggestedBeersListRepository): MvpPresenter<SuggestedBeersListView>() {
     private val items = ArrayList<CellModel>()
     private val disposeBag = CompositeDisposable()
 
@@ -30,7 +30,7 @@ class SuggestedBeersListPresenter @Inject constructor(val beersApi: BeersApi): M
     }
 
     private fun fetchBeersList() {
-        disposeBag.add(beersApi.getBeersList()
+        disposeBag.add(suggestedBeersListRepository.fetchBeersList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({

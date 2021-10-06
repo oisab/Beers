@@ -7,7 +7,12 @@ import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
-@Component(modules = [AndroidInjectionModule::class, ActivityBindingModule::class, RemoteModule::class, ResourceModule::class])
+@Component(modules = [AndroidInjectionModule::class,
+    ActivityBindingModule::class,
+    BeersListDataModule::class,
+    ResourceModule::class,
+    RoomModule::class,
+    RemoteModule::class])
 
 @Singleton
 interface AppComponent : AndroidInjector<BeersApp> {

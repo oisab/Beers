@@ -14,7 +14,7 @@ class BeersApp : Application(), HasAndroidInjector {
 
     override fun onCreate() {
         super.onCreate()
-6
+
         val appComponent = DaggerAppComponent.builder().application(this).build()
         appComponent.inject(this)
     }

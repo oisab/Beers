@@ -19,12 +19,12 @@ class SuggestedBeersListFragment : MvpAppCompatFragment(), SuggestedBeersListVie
     lateinit var suggestedBeersListPresenter: SuggestedBeersListPresenter
 
     private val beersAdapter = SuggestedBeersListAdapter()
-    @Inject lateinit var beersApi: BeersApi
+    @Inject lateinit var suggestedBeersListRepository: SuggestedBeersListRepository
     @Inject lateinit var resourceProvider: Resources
 
     @ProvidePresenter
     fun provideSuggestedBeersPresenter(): SuggestedBeersListPresenter {
-        return SuggestedBeersListPresenter(beersApi)
+        return SuggestedBeersListPresenter(suggestedBeersListRepository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

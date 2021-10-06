@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface BeersApi {
     @GET("./beers")
-    fun getBeersList(): Single<List<BeersListItem>>
+    fun getBeersList(): Single<List<BeersListResponse>>
 }
