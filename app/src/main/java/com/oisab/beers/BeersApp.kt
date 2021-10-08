@@ -1,6 +1,7 @@
 package com.oisab.beers
 
 import android.app.Application
+import com.oisab.beers.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector

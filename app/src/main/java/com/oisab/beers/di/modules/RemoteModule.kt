@@ -38,7 +38,4 @@ class RemoteModule {
 
     @Provides
     fun provideBeersApi(retrofit: Retrofit): BeersApi = retrofit.create(BeersApi::class.java)
-
-    @Provides
-    fun provideBeersApi2(retrofit: Retrofit): BeersApi2 = retrofit.create(BeersApi2::class.java)
 }
